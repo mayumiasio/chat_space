@@ -3,7 +3,7 @@
   float: left;
 
   &__user-name{
-    background-color: #253141;
+    background-color: $dark_blue;
     height: 100px;
     display: flex;
     padding: 0 20px;
@@ -17,12 +17,12 @@
       justify-content: space-between;
 
       &__name{
-        color: #FFFFFF;
+        color: $white;
       }
 
       &__icons{
         a{
-        color: #ffffff;
+        color: $white;
         text-decoration: none;
         }
       }
@@ -30,9 +30,9 @@
   }
 
   &__group-list{
-    background-color: #2f3e51;
+    background-color: $navy_blue;
     height: calc(100vh - 100px);
-    color: #ffffff;
+    color: $white;
     padding: 0 20px;
 
     .group{
@@ -45,7 +45,6 @@
       &__message{
         font-size: 11px;
         margin-top: 5px;
-
       }
     }
   }
