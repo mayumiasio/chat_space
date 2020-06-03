@@ -1,0 +1,31 @@
+-# ＜チャット画面＞
+.chat-main
+  .chat-main__group-info
+    .group
+      .group-name
+        ドラえもん
+      %ul.title 
+        Member : 
+        %li.member 
+          aaa
+
+    .edit-btn
+      = link_to ""
+      Edit
+  .chat-main__message-list
+    .message-info
+      .message-info__name
+        アシオ
+      .message-info__date
+        2020,1,1
+    .message-content
+      おめでとう
+  
+  .chat-main__message-form
+    = form_with url: "/", method: :post,class: "form", local: true do |form|
+      .input-box
+        = form.text_field :content, class: 'content', placeholder: "type a message"
+        = form.label :image, class: 'input-box__image' do
+          %i.fa.fa-image
+          = form.file_field :image, class: 'input'
+      = form.submit 'sent', class: "button"
