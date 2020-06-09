@@ -3,11 +3,11 @@
   .side-bar__user-name
     .top-items
       .top-items__name
-        mayumi
+        = current_user.name
       .top-items__icons
         = link_to "/" do
           %i.fa.fa-edit
-        = link_to "/" do
+        = link_to edit_user_path(current_user) do
           %i.fa.fa-cog
 
   .side-bar__group-list
