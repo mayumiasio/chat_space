@@ -3,18 +3,20 @@
   .chat-main__group-info
     .group
       .group-name
-        ドラえもん
+        = @group.name
       %ul.title 
         Member : 
         %li.member 
-          aaa
+          - @group.users.each do |user|
+            = user.name
+          
 
     .edit-btn
-      = link_to ""
-      Edit
+      =link_to "Edit", edit_group_path(params[:group_id])
+
   .chat-main__message-list
     = render @messages
-    
+
   .chat-main__message-form
     = form_with model: [@group, @message], html: {class: "form"}, local: true do |form|
       .input-box
