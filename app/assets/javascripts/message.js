@@ -2,36 +2,34 @@ $(function(){
   function buildHTML(message){
     if ( message.image ) {
       let html =
-        `<div class="MessageList">
-          <div class="MessageInfo">
-            <div class="MessageInfo__name">
+        `<div class="message-info">
+            <div class="message-info__name">
               ${message.user_name}
             </div>
-            <div class="MessageInfo__date">
+            <div class="message-info__date">
               ${message.created_at}
             </div>
           </div>
-          <div class="Message">
-            <p class="Message__content">
+          <div class="message-content">
+            <p class="message__content">
               ${message.content}
             </p>
-            <img class="Message__image" src="${message.image}">
+            <img class="message__image" src="${message.image}">
           </div>
         </div>`
       return html;
     } else {
       let html =
-      `<div class="MessageBox">
-        <div class="MessageInfo">
-          <div class="MessageInfo__name">
-            ${message.name}
+      `<div class="message-info">
+          <div class="message-info__name">
+            ${message.user_name}
           </div>
-          <div class="MessageInfo__date">
+          <div class="message-info__date">
             ${message.created_at}
           </div>
         </div>
-        <div class="Message">
-          <p class="Message__content">
+        <div class="message-content">
+          <p class="message__content">
             ${message.content}
           </p>
         </div>
@@ -54,7 +52,7 @@ $(function(){
     })
     .done(function(data){
       let html = buildHTML(data);
-      $('.MessageField').append(html);      
+      $('.chat-main__message-list').append(html);      
       $('form')[0].reset();
     })
   });
